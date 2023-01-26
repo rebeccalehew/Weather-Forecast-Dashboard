@@ -3,6 +3,7 @@
 
 ## Deployed URL:
 
+https://rebeccalehew.github.io/06-weatherRepo/
 
 
 ## Description

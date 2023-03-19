@@ -1,33 +1,44 @@
-// Declare varialbe to store the searched city
-var city = '';
+const sequelize = require('./config/connection');
 
+// Declare varialbe to store the searched city
+const city = '';
 
 // Variable declaration
-var searchCity = $('#search-city');
-var searchButton = $('#search-button');
-var currentCity = $('#current-city-name');
-var currentTemp = $('#current-temp');
-var currentHumidity = $('#current-humidity');
-var currentWindSpeed  = $('#current-winds');
-var storedCity = [];
-
+const searchCity = '#search-city';
+const searchButton = '#search-button';
+const currentCity = '#current-city-name';
+const currentTemp = '#current-temp';
+const currentHumidity = '#current-humidity';
+const currentWindSpeed  = '#current-winds';
+const storedCity = [];
 
 // Set-up the API key
-var APIKey = '71f97b0f1a6431a0559b0e92de9df1cb';
+const APIKey = APIKey; // set up in .env file
 
+// Searches to see if city exists in local storage
+function find(city) {
+    for (var i=0; i<storedCity.length; i++){
+        if(city.toUpperCase()===storedCity[i]){
+            return -1;
+        }
+    }
+    return 1;
+};
 
-// Search for city
+// Displays current and future weather to user based on form input
 function displayWeather(event){
     event.preventDefault();
     if(searchCity.val().trim()!==''){
         city=searchCity.val().trim();
         currentWeather(city);
     }
-}
+};
 
 // Call server side to get weather data
+function currentWeather(city){
+    let queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
 
-
+};
 // Parse data to display current weather, city name, date, and weather icons.
 
 

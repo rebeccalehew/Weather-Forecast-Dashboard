@@ -1,4 +1,4 @@
-const sequelize = require('./config/connection');
+const apiKey = '71f97b0f1a6431a0559b0e92de9df1cb';
 
 // Declare varialbe to store the searched city
 const city = '';
@@ -11,9 +11,6 @@ const currentTemp = '#current-temp';
 const currentHumidity = '#current-humidity';
 const currentWindSpeed  = '#current-winds';
 const storedCity = [];
-
-// Set-up the API key
-const APIKey = APIKey; // set up in .env file
 
 // Searches to see if city exists in local storage
 function find(city) {
@@ -36,7 +33,7 @@ function displayWeather(event){
 
 // Call server side to get weather data
 function currentWeather(city){
-    let queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
+    let queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey;
 
 };
 // Parse data to display current weather, city name, date, and weather icons.

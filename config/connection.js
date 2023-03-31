@@ -5,4 +5,4 @@ const sequelize = new Sequelize(
     process.env.APIKey
 );
   
-module.exports = sequelize;
+module.exports = Sequelize;
